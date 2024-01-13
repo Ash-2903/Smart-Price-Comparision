@@ -3,42 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC OG</title>
+    <title>Price Comparison</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+<style>
+   
+</style>
 <body>
-    <h1>Price Comparison !!</h1>
-    <form action="{{ url_for('search') }}" method="post">
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand h1" href="#">PricePulse</a>
+        </div>
+    </nav>
+
+    <form action="" method="post">
+        <div class="dropdown">
+            <button name="lang_sel" class="btn btn-secondary dropdown-toggle  m-4" type="button" id="dropdownMenuButton lang_sel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Languages
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <button type="submit" name="lang_sel" class="dropdown-item" value="kn">Kannada</button>
+                <button type="submit" name="lang_sel" class="dropdown-item" value="hi">Hindi</button>
+                <button type="submit" name="lang_sel" class="dropdown-item" value="te">Telugu</button>
+                <button type="submit" name="lang_sel"  class="dropdown-item" value="bn">Bengali</button>
+                <button type="submit" name="lang_sel" class="dropdown-item" value="es">Spanish</button>
+                <button type="submit" name="lang_sel" class="dropdown-item" value="fr">French</button>
+            </div>
+        </div>
+    </form>
+
+    <p id="intro" class="text-muted text-center m-5 h5">{{ default_intro }}</p>
+
+    <form action="{{ url_for('search') }}" method="post" class="m-5 text-center">
         <label for="product_name">Enter Product Name:</label>
-        <input type="text" id="product_name" name="product_name" required>
+        <input type="text" id="product_name" class="" name="product_name" required>
         <button type="submit">Search</button>
     </form>
     
-    <div>
+    <div class="text-center">
         <h2>Flipkart</h2>
         <p>{{ t1 }}</p>
     </div>
 
-    <div>
+    <div class="text-center">
         <h2>eBay</h2>
-        <p>{{ t2 }}</p>
+        {{ for i in range(1,4) }}
+            <p>{{ t2 }}</p>
     </div>
 
-    <div>
+    <div class="text-center">
         <h2>Croma</h2>
         <p>{{ t3 }}</p>
     </div>
 
-    <div>
+    <div class="text-center">
         <h2>Amazon</h2>
         <p>{{ t4 }}</p>
     </div>
 
-    <div>
+    <div class="text-center">
         <h2>OLX</h2>
         <p>{{ t5 }}</p>
     </div>
 
-    <div>
+    <div class="text-center">
         <h2>All URLs</h2>
         <p>{{ t6 }}</p>
     </div>
@@ -51,7 +80,14 @@
             window.open("{{ amazon }}");
             window.open("{{ olx }}");
         }
+
+
     </script>
     <button onclick="openURLs()">Open All URLs</button>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

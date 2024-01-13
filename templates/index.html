@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Comparison</title>
+</head>
+<body>
+    <h1>Price Comparison Extinction</h1>
+    <form action="{{ url_for('search') }}" method="post">
+        <label for="product_name">Enter Product Name:</label>
+        <input type="text" id="product_name" name="product_name" required>
+        <button type="submit">Search</button>
+    </form>
+    
+    <div>
+        <h2>Flipkart</h2>
+        <p>{{ t1 }}</p>
+    </div>
+
+    <div>
+        <h2>eBay</h2>
+        <p>{{ t2 }}</p>
+    </div>
+
+    <div>
+        <h2>Croma</h2>
+        <p>{{ t3 }}</p>
+    </div>
+
+    <div>
+        <h2>Amazon</h2>
+        <p>{{ t4 }}</p>
+    </div>
+
+    <div>
+        <h2>OLX</h2>
+        <p>{{ t5 }}</p>
+    </div>
+
+    <div>
+        <h2>All URLs</h2>
+        <p>{{ t6 }}</p>
+    </div>
+
+    <script>
+        function openURLs() {
+            window.open("{{ flipkart }}");
+            window.open("{{ ebay }}");
+            window.open("{{ croma }}");
+            window.open("{{ amazon }}");
+            window.open("{{ olx }}");
+        }
+    </script>
+    <button onclick="openURLs()">Open All URLs</button>
+</body>
+</html>

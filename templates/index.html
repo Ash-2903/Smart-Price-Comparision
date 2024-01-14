@@ -17,7 +17,7 @@
         </div>
     </nav>
 
-    <form action="" method="post">
+    <!-- <form action="" method="post">
         <div class="dropdown">
             <button name="lang_sel" class="btn btn-secondary dropdown-toggle  m-4" type="button" id="dropdownMenuButton lang_sel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Languages
@@ -31,7 +31,7 @@
                 <button type="submit" name="lang_sel" class="dropdown-item" value="fr">French</button>
             </div>
         </div>
-    </form>
+    </form> -->
 
     <p id="intro" class="text-muted text-center m-5 h5">{{ default_intro }}</p>
 
@@ -48,14 +48,18 @@
 
     <div class="text-center">
         <h2>eBay</h2>
-        {{ for i in range(1,4) }}
-            <p>{{ t2 }}</p>
+        <p>{{ ebay1 }}</p>
+        <img src="{{ ebay_i1M }}">
+        <p>{{ ebay2 }}</p>
+        <img src="{{ ebay_i2M }}">
+        <p>{{ ebay3 }}</p>
+        <img src="{{ ebay_i3M }}">
     </div>
 
-    <div class="text-center">
+    <!-- <div class="text-center">
         <h2>Croma</h2>
         <p>{{ t3 }}</p>
-    </div>
+    </div> -->
 
     <div class="text-center">
         <h2>Amazon</h2>
@@ -64,7 +68,12 @@
 
     <div class="text-center">
         <h2>OLX</h2>
-        <p>{{ t5 }}</p>
+        <p>{{ olx1 }}</p>
+        <img src="{{ olx_i1M }}">
+        <!-- <p>{{ olx2 }}</p>
+        <img src="{{ olx_i2M }}">
+        <p>{{ olx3 }}</p>
+        <img src="{{ olx_i3M }}"> -->
     </div>
 
     <div class="text-center">

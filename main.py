@@ -27,9 +27,14 @@ def flipkart(name=""):
         if name.upper() in flipkart_name:
             flipkart_price = soup.select('._1_WHN1')[0].getText().strip()
             flipkart_name = soup.select('._4rR01T')[0].getText().strip().upper()
+            cxw8mj_element = soup.select_one('.CXW8mj')
+            image_element = cxw8mj_element.select_one('img')
+            image_url = image_element.get('src')
+            global flipcart_img 
+            flipcart_img = image_url
             return f"{flipkart_name}\nPrice: {flipkart_price}\n"
     
-        return 'Product Not Found'
+        # return 'Product Not Found'
     except:
          return 'Product Not Found'
     
@@ -185,7 +190,7 @@ def search():
 
     print(p1[2]+ " " + p2[2] + " " + p3[2])
 
-    return render_template('index.html', t6=t6,t1=flipkart(product_name),ebay1=prod1,ebay2 = prod2,ebay3 = prod3,ebay_i1M = ebay_i1M,ebay_i2M = ebay_i2M,ebay_i3M=ebay_i3M,t4=amazon(product_name), olx1 = p1, olx2 = p2, olx3 = p3, olx_i1M=olx_i1M, olx_i2M = olx_i2M, olx_i3M=olx_i3M )
+    return render_template('index.html', t6=t6,t1=flipkart(product_name),ebay1=prod1,ebay2 = prod2,ebay3 = prod3,ebay_i1M = ebay_i1M,ebay_i2M = ebay_i2M,ebay_i3M=ebay_i3M,t4=amazon(product_name), olx1 = p1, olx2 = p2, olx3 = p3, olx_i1M=olx_i1M, olx_i2M = olx_i2M, olx_i3M=olx_i3M, flipcart_img = flipcart_img )
 
 if __name__ == '__main__':
     app.run(debug=True)
